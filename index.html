@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snehith's</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/ro.jpg" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-row"> 
+        <div class="box"><h1><i>B Snehith Reddy</i></h1></div>
+        <div class="box">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row" id="home">
+        <div style="display: flex;padding-top: 50px;">
+          <div class="box">
+            <h1>Full Stack Developer</h1>
+            <p>
+              I'm Snehith Reddy Banala, a full-stack developer with expertise in both front-end and back-end technologies. I build scalable and efficient web applications, leveraging modern frameworks, databases, and tools. Passionate about coding and problem-solving, I’m always eager to learn and improve my skills.
+            </p>
+            <p>
+              Beyond coding, I enjoy collaborating with teams, discussing innovative ideas, and exploring the latest trends in technology. I believe in continuous learning and staying updated with industry best practices to build better and more efficient applications.
+            </p>
+            <button>Button 1</button>
+            <button>Button 2</button>
+          </div>
+          <div class="box">
+            <img src="https://picsum.photos/id/2/400/400" />
+          </div>
+        </div>
+      </div>
+
+      <div id="projects" class="row" style="background-color: lightcoral">
+        <h1>Projects</h1>
+        <div style="display: flex">
+          <div class="box">
+            <h1>Leon's Cafe</h1>
+            <a href="p1.html">Visit</a>
+            <p>
+              Leon's Cafe is a chain of cafes in India, known for its diverse menu and inviting atmosphere. They offer a variety of dishes, including burgers, fried chicken, wings, popcorn pizza, and mocktails. You can explore their offerings and find more information on their official website:
+            </p>
+          </div>
+
+          <div class="box">
+            <h1>HDFC Bank</h1>
+            <a href="p2.html">Visit</a>
+            <p>
+              HDFC Bank (Housing Development Finance Corporation Bank) is one of India's leading private sector banks, headquartered in Mumbai, Maharashtra. Established in 1994, it is known for its strong financial services, customer-centric approach, and digital banking solutions.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Project 3</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi facilis tempora, nesciunt iure error, in totam illo porro, aperiam alias placeat est provident rem fugit repudiandae illum! Natus, quis aspernatur?
+            </p>
+          </div>
+        </div>
+      </div>
+      <script>
+        function getRandomColor() {
+          let letters = "0123456789ABCDEF";
+          let color = "#";
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+        function changeBackgroundColor() {
+          document.body.style.backgroundColor = getRandomColor();
+        }
+        setInterval(changeBackgroundColor, 3000);
+      </script>
+      <div id="services" class="row" style="background-color: lightblue">
+        <h1>Services</h1>
+        <div style="display: flex">
+          <div class="box">
+            <h3>Web App Development</h3>
+            <p>
+              Web app development refers to the process of building applications that run in a web browser. Unlike traditional desktop applications that run locally on a user's computer, web apps are hosted on servers and accessed via the internet.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Mobile App Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Backend Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="row">
+        <h1>About</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint
+          optio labore a obcaecati. Ullam distinctio corrupti autem. Veritatis
+          ipsa veniam deserunt asperiores nesciunt at provident itaque
+          cupiditate vel dolor.
+        </h3>
+        <h2>Skills</h2>
+        <h3>Java, Python, Reactjs</h3>
+        <p>Display the logo of all the technologies you know.</p>
+      </div>
+      <div
+        id="contact"
+        class="row"
+        style="background-color: lightgoldenrodyellow"
+      >
+        <h1>Contact</h1>
+        <div style="display: flex">
+         
+
+          <div class="box">
+            <h3>Contact Form</h3>
+            <p>
+             <input type="text" placeholder="Enter Name">
+            </p>
+            <p>
+              <input type="email" placeholder="Enter Email">
+             </p>
+             <p>
+              <textarea rows="10" cols="60" placeholder="Enter message"></textarea>
+             </p>
+             <button>Send</button>
+          </div>
+
+          <div class="box">
+            <h3>Your/Company Name</h3>
+            <p>
+              <b>Address: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+            <p>
+              <b>Email Address: </b><a href="mailto:snehithreddybanala@mail.com">snehixthreddybanala@gmail.com</a>
+            </p>
+            <p>
+              <b>Phone Number: </b>+91 9922347211
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">@copyright 2024. All rights reserved.</div>
+    </div>
+  </body>
+</html>
