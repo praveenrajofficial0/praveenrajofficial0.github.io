@@ -13,50 +13,68 @@
       const cart = {};
 
       const addToCart = (id) => {
-        if (cart[id]) {
-          cart[id]++; 
-        } else {
-          cart[id] = 1; 
+        if (!cart[id]) {
+          cart[id] = 1;
         }
         showCart();
       };
 
       const increment = (id) => {
-        cart[id]++;
+        if (cart[id]) {
+          cart[id] += 1;
+        }
         showCart();
       };
 
       const decrement = (id) => {
         if (cart[id] > 1) {
-          cart[id]--; 
+          cart[id]--;
         } else {
           delete cart[id];
         }
         showCart();
       };
 
+      const deleteCart = (id) => {
+        delete cart[id];
+        showCart();
+      };
+
+      const showTotal = () => {
+        const total = products.reduce((sum, product) => {
+          return sum + (product.price * (cart[product.id] || 0));
+        }, 0);
+        document.getElementById("total").innerHTML = total;
+      };
+
       const showCart = () => {
+        const items = document.getElementById("items");
+        const count = Object.keys(cart).reduce((sum, key) => sum + cart[key], 0);
+        items.innerHTML = count;
+
         let str = "";
-        products.forEach((value) => {
-          if (cart[value.id]) {
+        products.forEach((product) => {
+          if (cart[product.id]) {
             str += `<div>
-                      ${value.id} - ${value.name} - ${value.price} - 
-                      <button onclick='decrement(${value.id})'>-</button>
-                      ${cart[value.id]}
-                      <button onclick='increment(${value.id})'>+</button>
-                      - ${value.price * cart[value.id]}
+                      ${product.id} - ${product.name} - ${product.price} - 
+                      <button onclick='decrement(${product.id})'>-</button>
+                      ${cart[product.id]}
+                      <button onclick='increment(${product.id})'>+</button>
+                      - ${product.price * cart[product.id]}
+                      <button onclick="deleteCart(${product.id})">Delete</button>
                     </div>`;
           }
         });
         document.getElementById("divCart").innerHTML = str;
+        showTotal();
       };
 
       const showProducts = () => {
         let str = "";
-        products.forEach((value) => {
+        products.forEach((product) => {
           str += `<div>
-                    ${value.id} - ${value.name} - ${value.price} - 
-                    <button onclick='addToCart(${value.id})'>Add to Cart</button>
+                    ${product.id} - ${product.name} - ${product.price} - 
+                    <button onclick='addToCart(${product.id})'>Add to Cart</button>
                   </div>`;
         });
         document.getElementById("divProducts").innerHTML = str;
@@ -64,11 +82,13 @@
     </script>
   </head>
   <body onload="showProducts()">
-    <h1>My Store</h1>
+    <h1 style="background-color:rgb(255, 194, 245); color: rgb(0, 0, 0);">My Store</h1>
+    <h4>Cart: <span id="items">0</span></h4>
     <hr />
-    <h3>Products</h3>
+    <h3 style="background-color: rgb(217, 226, 34); color: rgb(116, 114, 112);">Products</h3>
     <div id="divProducts"></div>
-    <h3>My Cart</h3>
+    <h3 style="background-color: rgb(231, 107, 148);">My Cart</h3>
     <div id="divCart"></div>
+    <h4>Order Total: <span id="total">0</span></h4>
   </body>
 </html>
